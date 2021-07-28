@@ -1,0 +1,508 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Ubuntu", sans-serif;
+  color: #1a2856;
+  background-color: whitesmoke;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #1a2856;
+}
+header .header {
+  margin: 0 4rem 0 4rem;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-logo img {
+  width: 20rem;
+}
+header .header-nav a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px #3543704b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #3543705d;
+  }
+
+  .header_img img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home {
+    margin: 8rem 20rem 10rem 20rem;
+  }
+  .home h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    margin-top: 15rem;
+    font-size: 3rem;
+  }
+  .home .newTopic {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    margin-top: 8rem;
+  }
+
+  .faq_wrapper {
+    margin: 0 2rem 0 2rem;
+    display: flex;
+  }
+  .faq_wrapper .accordion_item {
+    border-bottom: 0.1rem solid #354370b7;
+    padding: 2rem 2rem 1.2rem 2rem;
+  }
+  .faq_wrapper .accordion_item .accordion_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    color: #3543705d;
+    text-decoration: none;
+    width: 100%;
+  }
+  .faq_wrapper .accordion_item .accordion_link svg {
+    width: 2rem;
+  }
+  .faq_wrapper .accordion_item .accordion_link .minus {
+    display: none;
+  }
+  .faq_wrapper .accordion_item .accordion_link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  .faq_wrapper .accordion_item .answer {
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    background-color: #1c307028;
+    color: #1a285694;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+  }
+  .faq_wrapper .accordion_item .answer ul li {
+    text-decoration: none;
+    font-size: 1.8rem;
+  }
+
+  .accordion {
+    margin: 0 2rem 0 2rem;
+  }
+
+  .forum_title {
+    margin-top: 8rem;
+  }
+
+  .forum_wrapper {
+    margin: 0 4rem 0 4rem;
+  }
+
+  .chatbot_wrapper {
+    width: 40rem;
+    background-color: white;
+    border-radius: 1rem;
+  }
+  .chatbot_wrapper .title {
+    background-color: #354370;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+  .chatbot_wrapper .form {
+    padding: 1rem;
+    min-height: 40rem;
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+  .chatbot_wrapper .form .inbox {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+  }
+  .chatbot_wrapper .form .inbox .icon_bot {
+    height: 4rem;
+    width: 4rem;
+    color: white;
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-color: #1a2856;
+  }
+  .chatbot_wrapper .form .inbox .txt_main {
+    max-width: 53%;
+    margin-left: 1rem;
+  }
+  .chatbot_wrapper .form .inbox .txt_main p {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.555);
+    background: linear-gradient(60deg, rgba(26, 40, 86, 0.8099614846) 0%, #65d36e 100%);
+    border-radius: 1rem;
+    padding: 0.8rem 1rem;
+    word-break: break-word;
+  }
+  .chatbot_wrapper .form .user_inbox {
+    justify-content: flex-end;
+  }
+  .chatbot_wrapper .form .user_inbox .txt_main p {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.555);
+    background: #354370;
+    border-radius: 1rem;
+    padding: 0.8rem 1rem;
+    word-break: break-all;
+  }
+  .chatbot_wrapper .typing_field {
+    display: flex;
+    height: 6rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #efefef;
+    border-top: 0.1rem solid #dbdbdb;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  .chatbot_wrapper .typing_field .input_field {
+    height: 4rem;
+    width: 35rem;
+  }
+  .chatbot_wrapper .typing_field .input_field input {
+    position: relative;
+    height: 100%;
+    padding: 0 8rem 0 1.5rem;
+    outline: none;
+    border: 0.1rem solid transparent;
+    border-radius: 0.5rem;
+  }
+  .chatbot_wrapper .typing_field .input_field input:focus {
+    border-color: #1f4ee794;
+  }
+  .chatbot_wrapper .typing_field .input_field button {
+    padding: 1.1rem;
+    background-color: #354370;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+  }
+
+  .accordion_item.accordion_active .answer {
+    height: 15rem;
+    padding: 1rem;
+  }
+
+  .accordion_item.accordion_active .accordion_link .minus {
+    display: block;
+  }
+  .accordion_item.accordion_active .accordion_link .plus {
+    display: none;
+  }
+
+  .forum_title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+    margin-top: 15rem;
+    font-size: 3rem;
+  }
+
+  .forum_wrapper {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .forum_wrapper .categorie_item {
+    border: 0.3rem solid lightgray;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    padding: 8rem 5rem 8rem 5rem;
+    width: 100%;
+  }
+  .forum_wrapper .categorie_item a {
+    text-decoration: none;
+    color: grey;
+  }
+  .forum_wrapper .categorie_item a img {
+    width: 10rem;
+    color: whitesmoke;
+  }
+
+  .title_topic {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+    font-size: 6rem;
+  }
+
+  .form_topic {
+    padding-top: 10rem;
+    padding-bottom: 20rem;
+    background-color: #1a2856;
+    display: flex;
+    justify-content: center;
+  }
+  .form_topic .input_topic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(245, 245, 245, 0.404);
+    border-radius: 2rem;
+    padding: 2rem;
+  }
+  .form_topic .input_topic label {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    color: white;
+  }
+  .form_topic .input_topic input {
+    background-color: rgba(245, 245, 245, 0.411);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    color: white;
+  }
+  .form_topic .input_topic select {
+    background-color: rgba(245, 245, 245, 0.411);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    color: white;
+  }
+  .form_topic .input_topic select option {
+    color: black;
+  }
+  .form_topic .input_topic .return_topic {
+    color: white;
+  }
+  .form_topic .input_topic .inputMessage {
+    width: 100%;
+    height: 20rem;
+    background-color: rgba(245, 245, 245, 0.411);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    color: white;
+  }
+  .form_topic .input_topic .submit_topic {
+    background-color: #65d36e;
+    color: white;
+  }
+
+  .section_wave {
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    overflow: hidden;
+  }
+  .section_wave .wave1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/wave3.png");
+    animation: wave1 30s linear infinite;
+  }
+  @keyframes wave1 {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+  .section_wave .wave2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/wave2.png");
+    animation: wave2 30s linear infinite;
+  }
+  @keyframes wave2 {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-position-x: 0px;
+    }
+  }
+  .section_wave .wave3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("../img/wave1.png");
+    animation: wave3 30s linear infinite;
+  }
+  @keyframes wave3 {
+    0% {
+      background-position-x: 0px;
+    }
+    100% {
+      background-position-x: 2000px;
+    }
+  }
+
+  .body_topic {
+    background-color: #1a2856;
+    height: 100vh;
+  }
+  .body_topic .graduent_topic {
+    background: linear-gradient(40deg, #1f4fe7, #65d36e);
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+  .body_topic .graduent_topic .topics {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: #1a285638 1px 2px 5px;
+  }
+  .body_topic .graduent_topic .topics table {
+    border: none;
+    background-color: whitesmoke;
+    width: 100%;
+  }
+  .body_topic .graduent_topic .topics table tr {
+    border: none;
+  }
+  .body_topic .graduent_topic .topics table tr th {
+    border: none;
+    padding: 2rem;
+  }
+  .body_topic .graduent_topic .topics table tr td {
+    padding: 2rem;
+    border: none;
+    padding-right: 10rem;
+  }
+  .body_topic .graduent_topic .topics .header_topic {
+    background: linear-gradient(40deg, #1f4fe7, #65d36e);
+  }
+
+  .margin_topic {
+    height: 50vh;
+    background-color: #1a2856;
+  }
+
+  .details {
+    margin-top: 20rem;
+    display: flex;
+    justify-content: center;
+  }
+  .details .img_details {
+    position: relative;
+  }
+  .details .img_details img {
+    width: 100%;
+    height: 100%;
+  }
+  .details .details_topic {
+    display: flex;
+    width: 40%;
+    height: 70%;
+    background-color: whitesmoke;
+    box-shadow: rgba(128, 128, 128, 0.562) 2px 0.5px 5px;
+    padding: 6rem;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-45%);
+  }
+  .details .details_topic .sujet_detail {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .details .details_topic .contenu_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .comment_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10rem;
+    padding: 2rem;
+    font-size: 4rem;
+  }
+
+  .comment_details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .comment_details textarea {
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .comment_details .comment_submit {
+    display: flex;
+    justify-content: center;
+    background-color: #65d36e;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+  .comment_display {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .comment_display .main {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+}
+.footer {
+  width: 100%;
+  margin-top: 0 auto;
+}
+
+/*# sourceMappingURL=main.css.map */

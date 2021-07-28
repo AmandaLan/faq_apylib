@@ -1,0 +1,1 @@
+Fait le pont entre le mvc et le HTML, permet d'envoyé les information au template via des variable stockant les réponses au fonction du controleur
